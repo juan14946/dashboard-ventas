@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Configuración general del dashboard
-st.set_page_config(page_title="Dashboard de Ventas", layout="wide")
-st.title("📊 Dashboard de Ventas")
+st.set_page_config(page_title="Metricas de Ventas", layout="wide")
+st.title("📊 Dashboard de Ventas retail Empresa Minorista")
 
 # Cargar los datos
 df = pd.read_excel("retail_limpio.xlsx")
@@ -89,7 +89,7 @@ ax2.grid(True)
 fig2.tight_layout()
 st.pyplot(fig2)
 
-st.subheader("🌎 Top 10 Departamentos/Ptovincias por Ventas Totales")
+st.subheader("🌎 Top 10 Departamentos/Provincias por Ventas Totales")
 
 # Agrupamos por departamento
 ventas_departamento = df.groupby("Provincia/Estado/Departamento")["Ventas"].sum().sort_values(ascending=False).head(10)
